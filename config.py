@@ -7,10 +7,12 @@ class Config(object):
     BOT_TOKEN = os.environ.get("BOT_TOKEN", "7794252669:AAFQ26m_9A5tABApom87fdibHNAqxmw_KBc") 
    
     # database config
-    DB_NAME = os.environ.get("DB_NAME","rename")     
-    DB_URL  = os.environ.get("DB_URL","mongodb+srv://ArshulGod:ArshulGod@cluster0.u1hpidc.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
-LOG_CHANNEL=-1002700449333")
- 
+    DB_NAME = os.environ.get("DB_NAME", "rename")     
+    DB_URL  = os.environ.get(
+        "DB_URL",
+        "mongodb+srv://ArshulGod:ArshulGod@cluster0.u1hpidc.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
+    )
+
     # other configs
     BOT_UPTIME  = time.time()
     START_PIC   = os.environ.get("START_PIC", "https://i.postimg.cc/gjx0nTGq/IMG-20251013-105149-145.jpg")
@@ -18,18 +20,14 @@ LOG_CHANNEL=-1002700449333")
 
     # channels logs
     FORCE_SUB   = os.environ.get("FORCE_SUB", "Anime_Universe_In_Hindi_Dub") 
-    LOG_CHANNEL = int(os.environ.get("LOG_CHANNEL", "-100270044933"))
+    LOG_CHANNEL = int(os.environ.get("LOG_CHANNEL", "-1002700449333"))
     
-
-    # wes response configuration     
+    # web response configuration     
     PORT = int(os.environ.get("PORT", "8080"))
     WEBHOOK = bool(os.environ.get("WEBHOOK", True))
 
-#ʀᴀᴘᴏ ᴄʀᴇᴀᴛᴏʀ https://github.com/AshutoshGoswami24
-#ʀᴀᴘᴏ https://github.com/AshutoshGoswami24/Rename-Bot
-
+# Text configuration
 class Txt(object):
-    # part of text configuration
     START_TXT = """Hello {} 👋 
 
 ➻ This Is An Advanced And Yet Powerful Rename Bot.
@@ -41,8 +39,7 @@ class Txt(object):
 ➻ This Bot Also Supports Custom Thumbnail And Custom Caption.
 
 <b>Bot Is Made By :</b> @PandaWep"""
-#ʀᴀᴘᴏ ᴄʀᴇᴀᴛᴏʀ https://github.com/AshutoshGoswami24
-#ʀᴀᴘᴏ https://github.com/AshutoshGoswami24/Rename-Bot
+
     ABOUT_TXT = """
 ╭───────────────⍟
 ├<b>🤖 My Name</b> : {}
@@ -88,15 +85,11 @@ class Txt(object):
 ┣⪼ ⏰️ Eᴛᴀ: {4}
 ┣⪼ 🥺 joine Plz: @PandaWep
 ╰━━━━━━━━━━━━━━━➣ </b>"""
-#ʀᴀᴘᴏ ᴄʀᴇᴀᴛᴏʀ https://github.com/AshutoshGoswami24
-#ʀᴀᴘᴏ https://github.com/AshutoshGoswami24/Rename-Bot
+
     DONATE_TXT = """
 <b>𝗧𝗵𝗮𝗻𝗸𝘀 𝗙𝗼𝗿 𝗦𝗵𝗼𝘄𝗶𝗻𝗴 𝗜𝗻𝘁𝗲𝗿𝗲𝘀𝘁 𝗜𝗻 𝗗𝗼𝗻𝗮𝘁𝗶𝗼𝗻! ❤️</b>
 
-𝐈𝐟 𝐘𝐨𝐮 𝐋𝐢𝐤𝐞 𝐌𝐲 𝐁𝐨𝐭𝐬 & 𝐏𝐫𝐨𝐣𝐞𝐜𝐭𝐬, 𝐘𝐨𝐮 𝐂𝐚𝐧 🎁 𝐃𝐨𝐧𝐚𝐭𝐞 𝐌𝐞 𝐀𝐧𝐲 𝐀𝐦𝐨𝐮𝐧𝐭 𝐅𝐫𝐨𝐦 𝟏𝟎𝐌 𝐑𝐬 😁 𝐔𝐩𝐭𝐨 𝐘𝐨𝐮𝐫 𝐂𝐡𝐨𝐢𝐜𝐞.
+𝐈𝐟 𝐘𝐨𝐮 𝐋𝐢𝐤𝐞 𝐌𝐲 𝐁𝐨𝐭𝐬 & 𝐏𝐫𝐨𝐣𝐞𝐜𝐭𝐬, 𝐘𝐨𝐮 𝐂𝐚𝐧 🎁 𝐃𝐨𝐧𝐚𝐭𝐞 𝐌𝐞 𝐀𝐧𝐲 𝐀𝐦𝐨𝐮𝐧𝐭 𝐅𝐫𝐨𝐦 𝟏𝟎𝐌 𝐑𝐬 😁 𝐔𝐩𝐭𝐨 𝐘𝐨𝐮𝐫 𝐂𝐡𝗼𝗶𝗰𝗲.
 
 <b>🛍 𝗨𝗣𝗜 𝗜𝗗:</b> `PandaWep@ybl`
 """
-
-#ʀᴀᴘᴏ ᴄʀᴇᴀᴛᴏʀ https://github.com/AshutoshGoswami24
-#ʀᴀᴘᴏ https://github.com/AshutoshGoswami24/Rename-Bot
