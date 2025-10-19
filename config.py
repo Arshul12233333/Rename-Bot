@@ -8,7 +8,7 @@ class Config(object):
    
     # database config
     DB_NAME = os.environ.get("DB_NAME","rename")     
-    DB_URL  = os.environ.get("DB_URL","mongodb+srv://ArshulGod:ArshulGod@cluster0.u1hpidc.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
+    DB_URL  = os.environ.get("DB_URL","mongodb+srv://ArshulGod:ArshulGod@cluster0.u1hpidc.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
 LOG_CHANNEL=-1002700449333")
  
     # other configs
