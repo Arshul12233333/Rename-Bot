@@ -2,26 +2,27 @@ import os, time
 
 class Config(object):
     # pyro client config
-    API_ID    = os.environ.get("API_ID", "")
-    API_HASH  = os.environ.get("API_HASH", "")
-    BOT_TOKEN = os.environ.get("BOT_TOKEN", "") 
+    API_ID    = os.environ.get("API_ID", "27198464")
+    API_HASH  = os.environ.get("API_HASH", "ee48c6b9ca05a9f95db7b78b2d268ea3")
+    BOT_TOKEN = os.environ.get("BOT_TOKEN", "7794252669:AAFQ26m_9A5tABApom87fdibHNAqxmw_KBc") 
    
     # database config
     DB_NAME = os.environ.get("DB_NAME","rename")     
-    DB_URL  = os.environ.get("DB_URL","")
+    DB_URL  = os.environ.get("DB_URL","mongodb+srv://ArshulGod:ArshulGod@cluster0.u1hpidc.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
+LOG_CHANNEL=-1002700449333")
  
     # other configs
     BOT_UPTIME  = time.time()
-    START_PIC   = os.environ.get("START_PIC", "")
-    ADMIN = int(os.environ.get("ADMIN", ""))
+    START_PIC   = os.environ.get("START_PIC", "https://i.postimg.cc/gjx0nTGq/IMG-20251013-105149-145.jpg")
+    ADMIN = int(os.environ.get("ADMIN", "6333237164"))
 
     # channels logs
-    FORCE_SUB   = os.environ.get("FORCE_SUB", "") 
-    LOG_CHANNEL = int(os.environ.get("LOG_CHANNEL", ""))
+    FORCE_SUB   = os.environ.get("FORCE_SUB", "Anime_Universe_In_Hindi_Dub") 
+    LOG_CHANNEL = int(os.environ.get("LOG_CHANNEL", "-100270044933"))
     
 
     # wes response configuration     
-    PORT = int(os.environ.get("PORT", ""))
+    PORT = int(os.environ.get("PORT", "8080"))
     WEBHOOK = bool(os.environ.get("WEBHOOK", True))
 
 #ʀᴀᴘᴏ ᴄʀᴇᴀᴛᴏʀ https://github.com/AshutoshGoswami24
