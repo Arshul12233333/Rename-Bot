@@ -30,8 +30,8 @@ class Bot(Client):
             await app.setup()       
             await web.TCPSite(app, "0.0.0.0", Config.PORT).start()     
         print(f"{me.first_name} Is Started.....✨️")
-        print(f"ʀᴀᴘᴏ https://github.com/AshutoshGoswami24/Rename-Bot")
-        print(f"ʀᴀᴘᴏ ᴄʀᴇᴀᴛᴏʀ https://github.com/AshutoshGoswami24")
+        print(f"ʀᴀᴘᴏ ")
+        print(f"ʀᴀᴘᴏ ᴄʀᴇᴀᴛᴏʀ ")
         
         if Config.LOG_CHANNEL:
             try:
