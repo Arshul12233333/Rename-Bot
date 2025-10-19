@@ -1,4 +1,8 @@
-import os, time, asyncio, shutil
+# =========================
+# AnimeUniverseBot (Config + Txt + Bot + Flask)
+# =========================
+import os, time, asyncio, shutil, threading
+from flask import Flask
 from pyrogram import Client, filters
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 
@@ -99,9 +103,18 @@ If You Like My Bots & Projects, You Can 🎁 Donate Any Amount From 10₹ 😁 U
 """
 
 # -------------------------------
-# BOT INSTANCE
+# FLASK DUMMY SERVER
 # -------------------------------
-app = Client(
+app_server = Flask(__name__)
+
+@app_server.route("/")
+def home():
+    return "Bot is running!"
+
+# -------------------------------
+# TELEGRAM BOT INSTANCE
+# -------------------------------
+app_bot = Client(
     "AnimeUniverseBot",
     api_id=Config.API_ID,
     api_hash=Config.API_HASH,
@@ -111,7 +124,7 @@ app = Client(
 # -------------------------------
 # START COMMAND
 # -------------------------------
-@app.on_message(filters.private & filters.command("start"))
+@app_bot.on_message(filters.private & filters.command("start"))
 async def start_bot(client, message):
     await message.reply_text(
         Txt.START_TXT.format(message.from_user.mention),
@@ -124,7 +137,7 @@ async def start_bot(client, message):
 # -------------------------------
 # CALLBACK QUERY HANDLER
 # -------------------------------
-@app.on_callback_query()
+@app_bot.on_callback_query()
 async def callback_handler(client, query):
     data = query.data
     await query.answer("Processing...")
@@ -145,7 +158,7 @@ async def process_file(query, ftype):
         await query.message.reply_text("No file found to process!")
         return
 
-    file_path = await app.download_media(file_id, file_name=f"downloads/input")
+    file_path = await app_bot.download_media(file_id, file_name=f"downloads/input")
     output_path = f"downloads/output"
 
     if ftype == "video":
@@ -169,7 +182,7 @@ async def process_file(query, ftype):
 
     # Log
     try:
-        await app.send_message(Config.LOG_CHANNEL, f"File processed by {query.from_user.mention}")
+        await app_bot.send_message(Config.LOG_CHANNEL, f"File processed by {query.from_user.mention}")
     except Exception as e:
         print("LOG_CHANNEL error:", e)
 
@@ -178,6 +191,11 @@ async def process_file(query, ftype):
     os.remove(output_path)
 
 # -------------------------------
-# RUN BOT
+# RUN BOTH FLASK + TELEGRAM
 # -------------------------------
-app.run()
+if __name__ == "__main__":
+    # Flask in background thread
+    threading.Thread(target=lambda: app_server.run(host="0.0.0.0", port=int(os.environ.get("PORT", 8080)))).start()
+
+    # Telegram bot run
+    app_bot.run()
